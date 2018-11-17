@@ -10,7 +10,7 @@ public class FracCalc {
     		System.out.println("Enter a expression to be caclculated below.");
     		String expressionInput = userInput.nextLine();
     		
-    		System.out.println(expressionInput);
+    		System.out.println(produceAnswer(expressionInput));
     		
     		System.out.println("Enter \"quit\" if you want to end the calculation loop.\n Enter \"continue\" to enter another value");
     		String next = userInput.next();
@@ -27,6 +27,7 @@ public class FracCalc {
         String firstOperand = inputTerms[0];
         String operator = inputTerms[1];
         String secondOperand = inputTerms[2];
+   
         
         return secondOperand;
         
