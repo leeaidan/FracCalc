@@ -27,6 +27,7 @@ public class FracCalc {
         String firstOperand = inputTerms[0];
         String operator = inputTerms[1];
         String secondOperand = inputTerms[2];
+        //wpw
    
         
         return secondOperand;
