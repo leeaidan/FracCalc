@@ -30,52 +30,52 @@ public class FracCalc {
     }
     public static String produceAnswer(String input)
     { 
-
     	String[] splitBySpace = input.split(" ");
-        String oprnd1 = splitBySpace[0];
-        String operator = splitBySpace[1];
-        String oprnd2 = splitBySpace[2];
-        
-        int[] oprnd2Arr = parseFrac(oprnd2);
-        int whole2 = oprnd2Arr[0];
-        int numer2 = oprnd2Arr[1];
-        int denom2 = oprnd2Arr[2]; 
-        
-      
-        String returnString = "whole:" + whole2 + " numerator:" + numer2 + " denominator:" + denom2;
-        return returnString;
-    }
-
-
-
-    public static int[] parseFrac(String oprnd) {
-		int whole = 0;
-		int numer = 0;
-		int denom = 1;
-		String[] firstSplit = oprnd.split("_"); 
-		if (oprnd.indexOf("/") != -1) //if there is a fraction
-		{ 
-			String fraction = firstSplit[firstSplit.length - 1]; 
-			String[] secondSplit = fraction.split("/"); 
-			numer = Integer.parseInt(secondSplit[0]);
-			denom = Integer.parseInt(secondSplit[1]);	
-			if (oprnd.indexOf("_") != -1)
-			{ //if there also is a whole
-				whole = Integer.parseInt(firstSplit[0]); 
-			}
-		} else 
-		{ 
-			whole = Integer.parseInt(firstSplit[0]); 
-		}
-
-		int[] returnArray = {whole, numer, denom};
-		return returnArray;
-       
+    	
+    	int[] firstOperand = convertToRealFraction(splitBySpace[0]);
+    	int[] secondOperand = convertToRealFraction(splitBySpace[2]);
+    	String operator = splitBySpace[1];
+    	
+    	if(firstOperand[2] == 0 || secondOperand[2] == 0 )
+    		throw new IllegalArgumentException("E-Error! You can't divide by zero baka ^_^!");
+    	}
     
+    	int[] firstImproperFrac = convertToImproperFraction(firstOperand);
+    	int[] secondImproperFrac = convertToImproperFraction(secondOperand);
+    	
+    	
     
-    
+    	
    
-
-  
+    public static int[] convertToRealFraction(String operand){
+    	int[] returnIntFrac = {0,0,1};
+    	if(operand.indexOf("_") != -1){
+    		String[] splitByUnderscore = operand.split("_");
+    		returnIntFrac[0] = Integer.parseInt(splitByUnderscore[0]);
+    		operand = splitByUnderscore[1];
+    	}
+    	if(operand.indexOf("/") != -1){
+    		String[] splitBySlash = operand.split("/");
+    		returnIntFrac[1] = Integer.parseInt(splitBySlash[0]);
+    		returnIntFrac[2] = Integer.parseInt(splitBySlash[1]);
+    		
+    	} else {
+    		returnIntFrac[0] = Integer.parseInt(operand);		
+    	}
+    	return returnIntFrac;
     } 
+    	
+    public static int[] convertToImproperFraction(int[] operand){
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    }
 }
