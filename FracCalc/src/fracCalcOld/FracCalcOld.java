@@ -1,11 +1,11 @@
-package fracCalc;
+package fracCalcOld;
 import java.util.*;
 /*
  * @author Aidan Lee
  * @version 11/18/2018
  * This class calculates the addition, subtraction, multiplication, and division of two operands between an operator
  */
-public class FracCalc {
+public class FracCalcOld {
 	//The Main method takes in input from a Scanner, and runs it through produce answer, and printing the final result to the console
     public static void main(String[] args) {
 		Scanner userInput = new Scanner(System.in); //New Scanner declared
